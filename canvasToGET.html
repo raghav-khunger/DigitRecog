@@ -40,6 +40,8 @@ document.getElementById('toggle').style.display = 'none';
 document.getElementById('save').style.display = 'none';
 var digit = new Image();
 digit.src = c.toDataURL();
+digit.onload = function() {  
+// wait for the image to load else it will give us all blank values
 c.width = 28
 c.height = 28
 ctx.drawImage(digit,4,4,20,20); // add 4x4 border & shrink
@@ -60,5 +62,6 @@ console.log(dataStr)
 document.getElementById("link").innerHTML = '<a href='
 + 'https://mnist-en10.c9users.io/?q=' + dataStr
 + '>Click to Send Image</a>'
+};
 }
 </script>
